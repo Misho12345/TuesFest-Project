@@ -3,14 +3,49 @@
 	ViewData["Title"] = "Home Page";
 }
 
-<div class="container">
-	<div class="row">
-		<div class="col-3">Total Views: </div>
-		<div class="col-4">
-			<span id="totalViewsCounter"></span>
-		</div>
+<form id="name-form" class="fullfill center" style="flex-direction: column">
+	<input type="text" id="username" placeholder="Enter your name"/>
+	<input type="text" id="group-name" placeholder="Enter group name"/>
+	<button type="submit">Submit</button>
+</form>
+
+<div id="game-container" style="display: none">
+	<canvas id="canvas" class="fullfill"></canvas>
+
+	<div id="ui" class="fullfill">
+		<div id="chat-container"></div>
 	</div>
 </div>
 
-<script src="~/js/signalr.js"></script>
-<script src="~/js/userCount.js"></script>
+<!-- Put image sprites here -->
+<div style="display: none">
+	<!--<img src="Images/test.png" id="test" alt=""/>-->
+</div>
+
+<script src="js/engine/MathFunctions.js"></script>
+<script src="js/engine/Vector2.js"></script>
+
+<script src="js/engine/Components/Component.js"></script>
+<script src="js/engine/Components/Transform.js"></script>
+
+<script src="js/engine/Components/Renderer.js"></script>
+<script src="js/engine/Components/Animator.js"></script>
+
+@* <script src="js/engine/Components/Colliders/Collider.js"></script>
+<script src="js/engine/Components/Colliders/CircleCollider.js"></script>
+<script src="js/engine/Components/Colliders/BorderCollider.js"></script>
+<script src="js/engine/Components/Colliders/PolygonCollider.js"></script>
+<script src="js/engine/Components/Colliders/BoxCollider.js"></script> *@
+
+<script src="js/engine/Components/Input.js"></script>
+
+<script src="js/engine/GameObject.js"></script>
+
+<!-- Put custom components from here -->
+
+<script src="js/Player.js"></script>
+<script src="js/Movement.js"></script>
+
+<!-- Put custom components to here -->
+
+<script src="js/engine/Main.js"></script>
